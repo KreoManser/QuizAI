@@ -1,0 +1,13 @@
+{
+	"options": {"timePerSetInSeconds": 800},
+	"sets": [
+		[
+		 {"question": "Тест 1", "answers": ["1", "2", "3", "4", "lol"], "correct": 3, "difficulty": 1, "imageURL": "https://wallpapercave.com/wp/uvbYKAJ.jpg"},
+		 {"question": "Тест 2", "answers": ["3", "a", "b", "c", "d"], "correctAnswers": [0,1], "difficulty": 1, "imageURL": "https://i.pinimg.com/originals/61/2b/1a/612b1acbb8398d9ee9302c420f5bc219.jpg"},
+		 {"question": "Тест 3", "answers": ["1", "2", "3", "4", "lol"], "correct": 3, "difficulty": 1, "imageURL": "https://99px.ru/sstorage/53/2017/07/mid_205453_9647.jpg"},
+		 {"question": "Тест 4", "answers": ["1", "2", "3", "4", "lol"], "correct": 3, "difficulty": 1, "imageURL": "https://hdqwalls.com/wallpapers/small-memory-lp.jpg"},
+		 {"question": "Тест без картинки", "answers": ["1", "2", "3", "4", "lol"], "difficulty": 1, "correct": 3},
+		 {"question": "Тест без картинки 2", "answers": ["1", "2", "3", "4", "lol"], "difficulty": 1, "correct": 3}
+		]
+	]
+}

@@ -1,0 +1,12 @@
+{
+	"sets": [
+		 [
+			  {"question": "Лучшая десктопная операционка", "answers": ["macOS", "Windows", "MS-DOS", "Linux c:"], "correct": 0, "difficulty": 1},
+			  {"question": "Лучшая IDE", "answers": ["Visual Studio", "Xcode", "Netbeans", "Eclipse"], "correct": 1, "difficulty": 1},
+		      {"question": "Лучшая OS для телефона", "answers": ["iOS", "Android", "BlackBerry OS", "Windows Phone c:"], "correctAnswers": [0,1], "difficulty": 1},
+			  {"question": "Лучшая версия винды",
+			  "answers": ["Windows XP", "Windows 7", "Windows Vista", "Windows 10"], "correct": 1, "difficulty": 1},
+			  {"question": "iPhone, iPad или Mac?", "answers": ["iPhone", "iPad", "Everyone c:", "Mac"], "correct": 2, "difficulty": 1}
+		  ]
+	 ]
+ }

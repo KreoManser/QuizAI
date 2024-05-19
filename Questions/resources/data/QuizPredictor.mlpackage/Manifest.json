@@ -1,0 +1,24 @@
+{
+    "fileFormatVersion": "1.0.0",
+    "itemInfoEntries": {
+        "12B7DC63-F1F3-4B8A-B91E-A4504BA56E58": {
+            "author": "com.apple.CoreML",
+            "description": "CoreML Model Specification",
+            "name": "QuizPredictor.mlmodel",
+            "path": "com.apple.CoreML/QuizPredictor.mlmodel"
+        },
+        "4D040CF6-A811-4F44-9CF0-6CC901F9460D": {
+            "author": "com.apple.CoreML",
+            "description": "External Metadata Overlay",
+            "name": "Metadata.json",
+            "path": "com.apple.CoreML/Metadata.json"
+        },
+        "BF6A6FC7-BEE5-4CCC-B3CB-A1E0743657F0": {
+            "author": "com.apple.CoreML",
+            "description": "External FeatureDescription Overlay",
+            "name": "FeatureDescriptions.json",
+            "path": "com.apple.CoreML/FeatureDescriptions.json"
+        }
+    },
+    "rootModelIdentifier": "12B7DC63-F1F3-4B8A-B91E-A4504BA56E58"
+}

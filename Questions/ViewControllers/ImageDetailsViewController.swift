@@ -1,0 +1,88 @@
+import UIKit
+
+class ImageDetailsViewController: UIViewController {
+	
+	@IBOutlet weak var imageView: UIImageView!
+	@IBOutlet weak var closeViewButton: UIButton!
+	@IBOutlet weak var scrollView: UIScrollView!
+	@IBOutlet var customPanGesture: UIPanGestureRecognizer!
+	
+	private var originalBGColor: UIColor {
+		if #available(iOS 13, *) {
+			return .secondarySystemBackground
+		}
+		return UIColor.themeStyle(dark: .black, light: .white)
+	}
+	
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		self.view.backgroundColor = originalBGColor
+		self.closeViewButton.backgroundColor = .themeStyle(dark: .orange, light: .defaultTintColor)
+	}
+	
+	override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+		super.traitCollectionDidChange(previousTraitCollection)
+		self.navigationController?.navigationBar.tintColor = .themeStyle(dark: .orange, light: .defaultTintColor)
+		self.view.backgroundColor = originalBGColor
+		self.closeViewButton.backgroundColor = .themeStyle(dark: .orange, light: .defaultTintColor)
+	}
+	
+	// MARK: - Actions
+	
+	@IBAction func closeViewAction(_ sender: UIButton) {
+		self.dismiss(animated: true)
+	}
+	
+	@IBAction func panGestureOverImageView(_ sender: UIPanGestureRecognizer) {
+		
+		let translation = sender.translation(in: self.imageView)
+		
+		self.imageView.transform = CGAffineTransform(translationX: translation.x, y: translation.y)
+		
+		let translationFromCenter = abs(translation.y / self.view.center.y)
+		self.view.backgroundColor = self.originalBGColor.withAlphaComponent(1 - translationFromCenter)
+		
+		if sender.state == .ended {
+			
+			let velocity = sender.velocity(in: self.imageView)
+			
+			if translationFromCenter >= 0.8 || abs(velocity.x) > 1000 || abs(velocity.y) > 1000 {
+				self.dismiss(animated: true)
+				return
+			}
+			
+			UIView.transition(with: self.imageView, duration: 0.15, options: [.curveEaseIn], animations: {
+				self.imageView.transform = .identity
+				self.view.backgroundColor = self.originalBGColor
+			})
+		}
+	}
+	
+	@IBAction func doubleTapToZoomAction(_ sender: UITapGestureRecognizer) {
+		if sender.state == .ended {
+			let zoomLevel = (self.scrollView.zoomScale > 1.0) ? self.scrollView.minimumZoomScale : 2.0
+			self.scrollView.setZoomScale(zoomLevel, animated: true)
+		}
+	}
+	
+	override var prefersStatusBarHidden: Bool {
+		return true
+	}
+}
+
+extension ImageDetailsViewController: UIScrollViewDelegate {
+	
+	func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+		return self.imageView
+	}
+	
+	func scrollViewDidZoom(_ scrollView: UIScrollView) {
+		scrollView.isScrollEnabled = true
+		
+		if scrollView.zoomScale == 1.0 {
+			self.customPanGesture.isEnabled = true
+		} else {
+			self.customPanGesture.isEnabled = false
+		}
+	}
+}

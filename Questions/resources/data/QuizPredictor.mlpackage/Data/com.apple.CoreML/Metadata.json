@@ -1,0 +1,12 @@
+{
+  "MLModelVersionStringKey" : "31 (Столько было обучено моделей до этой)",
+  "MLModelDescriptionKey" : "Предсказывает сложность следующего вопроса на основании ответа пользователя, 1 - Легкий, 2 - Средний, 3 - Тяжелый\nЧислоые значения используются для повышения точности модели, так как при использовании словестных форм - значение данных сильно меньше",
+  "MLModelCreatorDefinedKey" : {
+    "com.apple.createml.app.tag" : "121.4",
+    "com.apple.createml.version" : "14.4.0",
+    "com.apple.createml.app.version" : "5.0",
+    "com.apple.coreml.model.preview.type" : "tabularClassifier"
+  },
+  "MLModelAuthorKey" : "Сергей",
+  "MLModelLicenseKey" : "--"
+}
